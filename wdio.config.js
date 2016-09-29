@@ -1,3 +1,5 @@
+// require('babel-core')
+
 exports.config = {
 
     //
@@ -184,3 +186,7 @@ exports.config = {
     // onComplete: function(exitCode) {
     // }
 }
+
+// require("babel-core")({
+//     presets: ['es2015']
+// });
