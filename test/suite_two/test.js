@@ -12,21 +12,19 @@ describe('suite two tests', function(){
 
   before(function(){
     client = webdriverio.remote({ desiredCapabilities: {browserName: 'phantomjs'} });
-    return client.init();
   });
 
   it('Oak Wood Table Search', function(){
-    // return client.end()
-    return client
+    return client.init()
     .url('https://www.1stdibs.com')
     .setViewportSize({width: 1124, height: 850}, false)
     .setValue('.search-box-input', 'Oak Wood Table')
     .submitForm('.search-box-form')
-    .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.equal(resultsHeader, '2,540 results for')
-    })
     .getText('.results-header-search-term').then(function(resultsHeader){
       assert.equal(resultsHeader, '"oak wood table"')
+    })
+    .getTagName('.results-header-num-results').then(function(resultsHeaderNumResults){
+      assert.isOk(resultsHeaderNumResults)
     })
     .end()
   })
@@ -37,8 +35,8 @@ describe('suite two tests', function(){
     .setViewportSize({width: 1124, height: 850}, false)
     .setValue('.search-box-input', 'Cat Painting')
     .submitForm('.search-box-form')
-    .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.equal(resultsHeader, '348 results for')
+    .getTagName('.results-header-num-results').then(function(resultsHeaderNumResults){
+      assert.isOk(resultsHeaderNumResults)
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
       assert.equal(resultsHeader, '"cat painting"')
@@ -52,8 +50,8 @@ describe('suite two tests', function(){
     .setViewportSize({width: 1124, height: 850}, false)
     .setValue('.search-box-input', 'Gold Engagement Ring')
     .submitForm('.search-box-form')
-    .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.equal(resultsHeader, '1,766 results for')
+    .getTagName('.results-header-num-results').then(function(resultsHeaderNumResults){
+      assert.isOk(resultsHeaderNumResults)
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
       assert.equal(resultsHeader, '"gold engagement ring"')
@@ -67,8 +65,8 @@ describe('suite two tests', function(){
     .setViewportSize({width: 1124, height: 850}, false)
     .setValue('.search-box-input', 'Chanel Handbag')
     .submitForm('.search-box-form')
-    .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.equal(resultsHeader, '1,505 results for')
+    .getTagName('.results-header-num-results').then(function(resultsHeaderNumResults){
+      assert.isOk(resultsHeaderNumResults)
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
       assert.equal(resultsHeader, '"chanel handbag"')
