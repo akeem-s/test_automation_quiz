@@ -16,17 +16,62 @@ describe('suite two tests', function(){
   });
 
   it('Oak Wood Table Search', function(){
-    return client.end()
-    return client.init()
+    // return client.end()
+    return client
     .url('https://www.1stdibs.com')
     .setViewportSize({width: 1124, height: 850}, false)
     .setValue('.search-box-input', 'Oak Wood Table')
     .submitForm('.search-box-form')
-    .getText('.results-header-search-term').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, 'Oak Wood Table')
-    })
     .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '2,543 results for ')
+      assert.strictEqual(resultsHeader, '2,541 results for')
+    })
+    .getText('.results-header-search-term').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '"oak wood table"')
+    })
+    .end()
+  })
+
+  it('Cat Painting Search', function(){
+    return client.init()
+    .url('https://www.1stdibs.com')
+    .setViewportSize({width: 1124, height: 850}, false)
+    .setValue('.search-box-input', 'Cat Painting')
+    .submitForm('.search-box-form')
+    .getText('.results-header-num-results').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '348 results for')
+    })
+    .getText('.results-header-search-term').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '"cat painting"')
+    })
+    .end()
+  })
+
+  it('Gold Engagement Ring Search', function(){
+    return client.init()
+    .url('https://www.1stdibs.com')
+    .setViewportSize({width: 1124, height: 850}, false)
+    .setValue('.search-box-input', 'Gold Engagement Ring')
+    .submitForm('.search-box-form')
+    .getText('.results-header-num-results').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '1,766 results for')
+    })
+    .getText('.results-header-search-term').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '"gold engagement ring"')
+    })
+    .end()
+  })
+
+  it('Chanel Handbag Search', function(){
+    return client.init()
+    .url('https://www.1stdibs.com')
+    .setViewportSize({width: 1124, height: 850}, false)
+    .setValue('.search-box-input', 'Chanel Handbag')
+    .submitForm('.search-box-form')
+    .getText('.results-header-num-results').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '1,505 results for')
+    })
+    .getText('.results-header-search-term').then(function(resultsHeader){
+      assert.strictEqual(resultsHeader, '"chanel handbag"')
     })
     .end()
   })
