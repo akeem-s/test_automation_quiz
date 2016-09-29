@@ -2,8 +2,7 @@ var chai        = require('chai'),
     assert      = chai.assert,
     webdriverio = require('webdriverio'),
     expect      = require('chai').expect,
-    should      = chai.should(),
-    sinon       = require('sinon')
+    should      = chai.should()
     ;
 
 describe('suite two tests', function(){
