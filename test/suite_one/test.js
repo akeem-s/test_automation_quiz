@@ -21,16 +21,16 @@ describe('suite one tests', function(){
     .end()
   });
 
-  function navbarLinkTests(link, headerText) {
-    return client.init()
-    .url('https://www.1stdibs.com')
-    .setViewportSize({width: 1124, height: 850}, false)
-    .click("a[href='https://www.1stdibs.com/"+link+"/']")
-    .getText('.browse-header-title').then(function (header, headerText){
-      assert.equal(header, headerText)
-    })
-    .end()
-  }
+  // function navbarLinkTests(link, headerText) {
+  //   return client.init()
+  //   .url('https://www.1stdibs.com')
+  //   .setViewportSize({width: 1124, height: 850}, false)
+  //   .click("a[href='https://www.1stdibs.com/"+link+"/']")
+  //   .getText('.browse-header-title').then(function (header, headerText){
+  //     assert.equal(header, headerText)
+  //   })
+  //   .end()
+  // }
 
   it('Furniture navbar link loads proper page', function(){
     return client.init()
@@ -62,7 +62,6 @@ describe('suite one tests', function(){
     .getText('.browse-header-title').then(function (header){
       assert.equal(header, 'Jewelry & Watches')
     })
-
     .end()
   })
 
@@ -76,9 +75,4 @@ describe('suite one tests', function(){
     })
     .end()
   })
-
-  after(function() {
-    console.log("AFTER")
-    return client.end();
-  });
 });

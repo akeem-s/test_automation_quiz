@@ -72,8 +72,4 @@ describe('suite two tests', function(){
     })
     .end()
   })
-
-    after(function() {
-      return client.end();
-    });
 });
