@@ -23,10 +23,10 @@ describe('suite two tests', function(){
     .setValue('.search-box-input', 'Oak Wood Table')
     .submitForm('.search-box-form')
     .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '2,541 results for')
+      assert.equal(resultsHeader, '2,540 results for')
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '"oak wood table"')
+      assert.equal(resultsHeader, '"oak wood table"')
     })
     .end()
   })
@@ -38,10 +38,10 @@ describe('suite two tests', function(){
     .setValue('.search-box-input', 'Cat Painting')
     .submitForm('.search-box-form')
     .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '348 results for')
+      assert.equal(resultsHeader, '348 results for')
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '"cat painting"')
+      assert.equal(resultsHeader, '"cat painting"')
     })
     .end()
   })
@@ -53,10 +53,10 @@ describe('suite two tests', function(){
     .setValue('.search-box-input', 'Gold Engagement Ring')
     .submitForm('.search-box-form')
     .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '1,766 results for')
+      assert.equal(resultsHeader, '1,766 results for')
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '"gold engagement ring"')
+      assert.equal(resultsHeader, '"gold engagement ring"')
     })
     .end()
   })
@@ -68,10 +68,10 @@ describe('suite two tests', function(){
     .setValue('.search-box-input', 'Chanel Handbag')
     .submitForm('.search-box-form')
     .getText('.results-header-num-results').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '1,505 results for')
+      assert.equal(resultsHeader, '1,505 results for')
     })
     .getText('.results-header-search-term').then(function(resultsHeader){
-      assert.strictEqual(resultsHeader, '"chanel handbag"')
+      assert.equal(resultsHeader, '"chanel handbag"')
     })
     .end()
   })
